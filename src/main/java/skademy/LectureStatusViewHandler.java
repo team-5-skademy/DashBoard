@@ -24,7 +24,7 @@ public class LectureStatusViewHandler {
                 // view 객체 생성
                 LectureStatus lectureStatus = new LectureStatus();
                 // view 객체에 이벤트의 Value 를 set 함
-                lectureStatus.setLectureId(lectureOpened.getId);
+                lectureStatus.setLectureId(lectureOpened.getId());
                 // view 레파지 토리에 save
                 lectureStatusRepository.save(lectureStatus);
             }
@@ -39,10 +39,10 @@ public class LectureStatusViewHandler {
         try {
             if (courseRegistrationCompleted.isMe()) {
                 // view 객체 조회
-                List<LectureStatus> lectureStatusList = lectureStatusRepository.findByLectureId(courseRegistrationCompleted.getLectureId);
+                List<LectureStatus> lectureStatusList = lectureStatusRepository.findByLectureId(courseRegistrationCompleted.getLectureId());
                 for(LectureStatus lectureStatus : lectureStatusList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    lectureStatus.setLectureStatus(courseRegistrationCompleted.getStatus);
+                    lectureStatus.setLectureStatus(courseRegistrationCompleted.getStatus());
                     // view 레파지 토리에 save
                     lectureStatusRepository.save(lectureStatus);
                 }
@@ -56,10 +56,10 @@ public class LectureStatusViewHandler {
         try {
             if (courseCanceled.isMe()) {
                 // view 객체 조회
-                List<LectureStatus> lectureStatusList = lectureStatusRepository.findByLectureId(courseCanceled.getLectureId);
+                List<LectureStatus> lectureStatusList = lectureStatusRepository.findByLectureId(courseCanceled.getLectureId());
                 for(LectureStatus lectureStatus : lectureStatusList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    lectureStatus.setLectureStatus(courseCanceled.getStatus);
+                    lectureStatus.setLectureStatus(courseCanceled.getStatus());
                     // view 레파지 토리에 save
                     lectureStatusRepository.save(lectureStatus);
                 }
@@ -74,7 +74,7 @@ public class LectureStatusViewHandler {
         try {
             if (openedCanceled.isMe()) {
                 // view 레파지 토리에 삭제 쿼리
-                lectureStatusRepository.deleteByLectureId(openedCanceled.getId);
+                lectureStatusRepository.deleteByLectureId(openedCanceled.getId());
             }
         }catch (Exception e){
             e.printStackTrace();

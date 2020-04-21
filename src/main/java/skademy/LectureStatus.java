@@ -11,7 +11,7 @@ public class LectureStatus {
         @GeneratedValue(strategy=GenerationType.AUTO)
         private Long id;
         private Long lectureId;
-        private Integer lectureStatus;
+        private String lectureStatus;
 
 
         public Long getId() {
@@ -28,11 +28,11 @@ public class LectureStatus {
         public void setLectureId(Long lectureId) {
             this.lectureId = lectureId;
         }
-        public Integer getLectureStatus() {
+        public String getLectureStatus() {
             return lectureStatus;
         }
 
-        public void setLectureStatus(Integer lectureStatus) {
+        public void setLectureStatus(String lectureStatus) {
             this.lectureStatus = lectureStatus;
         }
 

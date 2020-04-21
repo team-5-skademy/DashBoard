@@ -9,5 +9,5 @@ public interface CourseRegistrationStatusRepository extends CrudRepository<Cours
 
     List<CourseRegistrationStatus> findByCourseStatus(String courseStatus);
 
-        void deleteByCourseId(Long courseId);
+    void deleteByCourseId(Long courseId);
 }
